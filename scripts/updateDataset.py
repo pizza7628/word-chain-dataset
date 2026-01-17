@@ -10,7 +10,7 @@ subsetGroups = [
 	list(range(42, 45)),
 ]
 
-sha = os.environ.get("AFTER_SHA")
+sha = os.environ.get("SHA")
 
 try:
 	with open("data/dataset/curated/blacklist.json", "r", encoding="utf-8") as f:
@@ -19,15 +19,15 @@ except:
 	blacklist = {}
 
 
-def isUpdated(path, chains):
+def isUpdated(path, chains, startingWords):
 	try:
 		with open(path, "r", encoding="utf-8") as f:
 			data = json.load(f)
 
-			a_normalized = {k: set(v) for k, v in data["data"].items()}
-			b_normalized = {k: set(v) for k, v in chains.items()}
+			aChains = {k: set(v) for k, v in data["data"].items()}
+			bChains = {k: set(v) for k, v in chains.items()}
 
-			return a_normalized != b_normalized
+			return aChains != bChains or set(data["startingWords"] or []) != set(startingWords)
 	except:
 		return True
 	
@@ -40,7 +40,7 @@ def compileSubsets():
 	for i in range(len(subsetGroups)):
 		subsets = subsetGroups[i]
 		chains = {}
-		startingWords = set()
+		startingWords = []
 
 		for j in range(len(subsets) - 1):
 			curr = subsets[j]
@@ -55,15 +55,15 @@ def compileSubsets():
 				if not word in chains: chains[word] = []
 				blacklistDict = blacklist.get(word) or []
 
-				if j == 0 or j == 1:
-					startingWords.add(word)
+				if (j == 0 or j == 1) and not word in startingWords:
+					startingWords.append(word)
 
 				for chained in nextWords:
 					if chained in blacklistDict or chained in chains[word]: continue
 					chains[word].append(chained)
 
 		path = f"data/dataset/generated/generated{i}.json"
-		if not isUpdated(path, chains): continue
+		if not isUpdated(path, chains, startingWords): continue
 
 		dataset = {
 			"version": sha,

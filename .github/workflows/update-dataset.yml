@@ -18,6 +18,8 @@ jobs:
 
       - name: Run update script
         run: python scripts/updateDataset.py
+        env:
+          SHA: ${{ github.sha }}
       - name: Commit update
         run: |
           git config user.name "github-actions[bot]"
