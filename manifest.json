@@ -1,6 +1,6 @@
 {
-  "version": "a17e2cf6f7e86491c6a42a4b90495d844f7c166f",
-  "updated_at": "2026-01-18T13:31:02.364514+00:00",
+  "version": "a73a19044fb2b34dfc88a378ca97ea6554a2ce1e",
+  "updated_at": "2026-01-18T14:25:26.492876+00:00",
   "dataset": {
     "generated2": {
       "version": "a17e2cf6f7e86491c6a42a4b90495d844f7c166f",
@@ -33,9 +33,9 @@
       "url": "https://raw.githubusercontent.com/Fomecrazy/word-chain-dataset/a17e2cf6f7e86491c6a42a4b90495d844f7c166f/data/dataset/curated/fome.json"
     },
     "animal": {
-      "version": "a17e2cf6f7e86491c6a42a4b90495d844f7c166f",
-      "updated_at": "2026-01-18T13:31:02.363957+00:00",
-      "url": "https://raw.githubusercontent.com/Fomecrazy/word-chain-dataset/a17e2cf6f7e86491c6a42a4b90495d844f7c166f/data/dataset/curated/animal.json"
+      "version": "a73a19044fb2b34dfc88a378ca97ea6554a2ce1e",
+      "updated_at": "2026-01-18T14:25:26.492451+00:00",
+      "url": "https://raw.githubusercontent.com/Fomecrazy/word-chain-dataset/a73a19044fb2b34dfc88a378ca97ea6554a2ce1e/data/dataset/curated/animal.json"
     },
     "places": {
       "version": "a17e2cf6f7e86491c6a42a4b90495d844f7c166f",
