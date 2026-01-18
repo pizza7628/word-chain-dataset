@@ -2,14 +2,29 @@
 	"metadata": {},
 	"data": {
 		"mouse": [
-			"trap"
+			"trap",
+			"poison"
 		],
 		"cow": [
 			"bell",
 			"milk"
 		],
 		"goat": [
-			"horn"
+			"horn",
+			"milk"
+		],
+		"horse": [
+			"ride",
+			"power",
+			"fly",
+			"shoe"
+		],
+		"dog": [
+			"food",
+			"leash",
+			"trainer",
+			"park",
+			"house"
 		]
 	}
 }
