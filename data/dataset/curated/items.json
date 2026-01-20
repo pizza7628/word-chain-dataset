@@ -2,7 +2,8 @@
 	"metadata": {},
 	"data": {
 		"coin": [
-			"press"
+			"press",
+			"flip"
 		],
 		"cuff": [
 			"link"
